@@ -21,7 +21,6 @@ class _SongDetailScreenState extends State<SongDetailScreen>
     _artworkAnimationController =
     AnimationController(vsync: this, duration: const Duration(seconds: 10))
       ..repeat();
-    // Play the song
     widget.player.open(
       Playlist(audios: widget.player.playlist!.audios),
       showNotification: true,
@@ -34,8 +33,8 @@ class _SongDetailScreenState extends State<SongDetailScreen>
     _artworkAnimationController.dispose();
     super.dispose();
   }
-
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -61,7 +60,6 @@ class _SongDetailScreenState extends State<SongDetailScreen>
                 ),
               ),
               const SizedBox(height: 20),
-              // Rotating artwork with glow
               Stack(
                 alignment: Alignment.center,
                 children: [
@@ -163,7 +161,6 @@ class _SongDetailScreenState extends State<SongDetailScreen>
                 ],
               ),
               const SizedBox(height: 30),
-              // Progress bar and duration
               StreamBuilder<Playing?>(
                 stream: widget.player.current,
                 builder: (context, snapshot) {
@@ -181,7 +178,6 @@ class _SongDetailScreenState extends State<SongDetailScreen>
                           int seconds = duration.inSeconds % 60;
                           return "${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}";
                         }
-
                         return Column(
                           children: [
                             Row(
@@ -222,7 +218,7 @@ class _SongDetailScreenState extends State<SongDetailScreen>
                       },
                     );
                   } else {
-                    return const Center(
+                    return Center(
                       child: CircularProgressIndicator(
                         color: Colors.white,
                       ),
@@ -230,7 +226,6 @@ class _SongDetailScreenState extends State<SongDetailScreen>
                   }
                 },
               ),
-              const SizedBox(height: 50),
             ],
           ),
         ),
