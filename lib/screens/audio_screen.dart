@@ -202,14 +202,14 @@ class _AudioScreenState extends State<AudioScreen> {
                       width: 25,
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                          colors: [Colors.purpleAccent, Colors.blueAccent], // Gradient colors
+                          colors: [Colors.purpleAccent, Colors.blueAccent],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),
-                        shape: BoxShape.circle, // Makes the container circular
+                        shape: BoxShape.circle,
                       ),
                       child: IconButton(
-                        icon: const Icon(Icons.play_arrow, color: Colors.white), // White icon to contrast the gradient
+                        icon: const Icon(Icons.play_arrow, color: Colors.white),
                         onPressed: () {
                           player.playlistPlayAtIndex(index);
                         },
