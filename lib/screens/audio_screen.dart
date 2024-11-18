@@ -2,8 +2,6 @@ import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
-
-// Import the song detail screen
 import '../utils/global.dart';
 import 'audio_detail_screen.dart';
 
@@ -39,7 +37,6 @@ class _AudioScreenState extends State<AudioScreen> {
     return Scaffold(
       body: Column(
         children: [
-          // Carousel for displaying songs
           CarouselSlider(
             items: audios.map((audio) {
               return Container(
@@ -174,12 +171,12 @@ class _AudioScreenState extends State<AudioScreen> {
                         IconButton(
                           onPressed: currentIndex != null && currentIndex > 0
                               ? () => player.previous()
-                              : null, // Disable if at the first track
+                              : null, 
                           icon: Icon(
                             Icons.skip_previous,
                             color: currentIndex != null && currentIndex > 0
                                 ? Colors.white
-                                : Colors.grey, // Change color if disabled
+                                : Colors.grey, 
                             size: 30,
                           ),
                         ),
@@ -201,13 +198,13 @@ class _AudioScreenState extends State<AudioScreen> {
                           onPressed: currentIndex != null &&
                               currentIndex < (totalTracks! - 1)
                               ? () => player.next()
-                              : null, // Disable if at the last track
+                              : null, 
                           icon: Icon(
                             Icons.skip_next,
                             color: currentIndex != null &&
                                 currentIndex < (totalTracks! - 1)
                                 ? Colors.white
-                                : Colors.grey, // Change color if disabled
+                                : Colors.grey, 
                             size: 30,
                           ),
                         ),
