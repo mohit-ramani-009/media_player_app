@@ -95,7 +95,6 @@ class _SongDetailScreenState extends State<SongDetailScreen>
                 ],
               ),
               const SizedBox(height: 30),
-              // Song Title and Artist
               Column(
                 children: [
                   Text(
@@ -118,7 +117,7 @@ class _SongDetailScreenState extends State<SongDetailScreen>
                 ],
               ),
               const SizedBox(height: 20),
-              // Song Controls
+       
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
