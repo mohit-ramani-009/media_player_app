@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
           Positioned.fill(
             child: Image.asset(
               "assets/images/3d-cartoon-character-djing-party (1).jpg",
-              fit: BoxFit.cover, // Ensure the image covers the full screen
+              fit: BoxFit.cover, 
             ),
           ),
         ],
