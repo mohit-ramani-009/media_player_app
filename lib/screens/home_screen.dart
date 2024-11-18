@@ -35,16 +35,12 @@ class _HomeScreenState extends State<HomeScreen> {
             labelColor: Colors.white,
             tabs: [
               Tab(
-                icon: Icon(Icons.home,color: Colors.white,),
-                text: 'Home',
+                icon: Icon(Icons.music_note,color: Colors.white,),
+                text: 'Music',
               ),
               Tab(
                 icon: Icon(Icons.video_call,color: Colors.white,),
                 text: 'Video',
-              ),
-              Tab(
-                icon: Icon(Icons.music_note,color: Colors.white,),
-                text: 'Music',
               ),
             ],
           ),
@@ -52,31 +48,15 @@ class _HomeScreenState extends State<HomeScreen> {
         body: TabBarView(
           children: [
             Container(
-              color: Colors.teal.shade50,
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Icon(Icons.home, size: 100, color: Colors.teal),
-                    Text(
-                      'Welcome to the Home Screen',
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
-                    ),
-                  ],
-                ),
+              color: Colors.pink.shade50,
+              child: const Center(
+                child: AudioScreen(),
               ),
             ),
             Container(
               color: Colors.lightBlue.shade50,
               child: const Center(
-                child: VideoScreen(),
-              ),
-            ),
-            Container(
-              color: Colors.pink.shade50,
-              child: const Center(
-                child: AudioScreen(),
+                child: VideoView(),
               ),
             ),
           ],
