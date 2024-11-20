@@ -28,7 +28,6 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
     initializeVideoController(widget.videoPath);
   }
 
-  // Function to initialize the video controller
   void initializeVideoController(String videoPath) {
     videoPlayerController = VideoPlayerController.asset(videoPath);
 
@@ -37,7 +36,7 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
         chewieController = ChewieController(
           videoPlayerController: videoPlayerController,
           autoPlay: true,
-          looping: false, // Optional: Add looping if needed
+          looping: false,
         );
       });
     });
@@ -45,7 +44,6 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
 
   @override
   void dispose() {
-    // Dispose controllers to release resources
     videoPlayerController.dispose();
     chewieController?.dispose();
     super.dispose();
@@ -77,7 +75,6 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Video player wrapped in a Center widget to center it
             if (chewieController != null)
               Center(
                 child: Container(
@@ -90,17 +87,13 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
               )
             else
               const Center(child: CircularProgressIndicator()),
-
-            // Space between player and details
             const SizedBox(height: 20),
 
-            // Video details
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Video Title
                   Text(
                     widget.videoTitle,
                     style: const TextStyle(
@@ -113,7 +106,6 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
                   ),
                   const SizedBox(height: 8),
 
-                  // Channel Name
                   const Text(
                     'Channel Name',
                     style: TextStyle(
@@ -123,7 +115,6 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
                   ),
                   const SizedBox(height: 8),
 
-                  // Views and Upload Time
                   const Text(
                     '1.5M views • 1 day ago',
                     style: TextStyle(
@@ -133,7 +124,6 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
                   ),
                   const SizedBox(height: 12),
 
-                  // Video Description
                   const Text(
                     'This is a description of the video. It provides more details about the video content. The description could be longer, and it gives viewers more context about what to expect.',
                     style: TextStyle(
@@ -145,17 +135,14 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
                   ),
                   const SizedBox(height: 20),
 
-                  // Like, Dislike, Share, and Comment buttons
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Like and Dislike
                       Row(
                         children: [
                           IconButton(
                             icon: const Icon(Icons.thumb_up, color: Colors.white),
                             onPressed: () {
-                              // Implement like functionality
                             },
                           ),
                           const Text(
@@ -169,7 +156,6 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
                           IconButton(
                             icon: const Icon(Icons.thumb_down, color: Colors.white),
                             onPressed: () {
-                              // Implement dislike functionality
                             },
                           ),
                         ],
@@ -181,7 +167,6 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
                           IconButton(
                             icon: const Icon(Icons.share, color: Colors.white),
                             onPressed: () {
-                              // Implement share functionality
                             },
                           ),
                           const Text(

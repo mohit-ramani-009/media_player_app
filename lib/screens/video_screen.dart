@@ -12,14 +12,12 @@ class VideoView extends StatelessWidget {
       backgroundColor: Colors.black,
       body: Column(
         children: [
-          // Video list with thumbnails and titles
           Expanded(
             child: ListView.builder(
               itemCount: videoList.length,
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
-                    // Navigate to Video Detail Screen with selected video
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -36,7 +34,6 @@ class VideoView extends StatelessWidget {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // Thumbnail
                         Container(
                           width: 120,
                           height: 90,
@@ -49,7 +46,6 @@ class VideoView extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 10),
-                        // Video title and channel name
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -65,7 +61,7 @@ class VideoView extends StatelessWidget {
                             ),
                             const SizedBox(height: 4),
                             const Text(
-                              'Gujrati Dayro', // You can dynamically change this
+                              'Gujrati Dayro',
                               style: TextStyle(
                                 color: Colors.white70,
                                 fontSize: 14,
